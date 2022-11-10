@@ -5,13 +5,14 @@ def getTextFromPDF(filepath):
     
     fulltext = "" 
     numPages = pdfReader.numPages 
-    print(numPages)
+    # print(numPages)
     for i in range(numPages):        
         pageObj = pdfReader.getPage(i) 
         fulltext += pageObj.extractText() 
         fulltext += "\n"
     
     fulltext = fulltext.split('\n')
-    fulltext = " ".join(fulltext)    
+    fulltext = " ".join(fulltext)  
+    fulltext = " ".join(fulltext.split())
     pdfFileObj.close() 
     return fulltext
