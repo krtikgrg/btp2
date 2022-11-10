@@ -2,7 +2,9 @@
 import textFromPDF
 from preprocess import preprocess
 from download import download
+from webCheck import getSimilarArticleURLS
 
 # download()
-sentenceWiseWords = preprocess(textFromPDF.getTextFromPDF("check.pdf"))
-print(sentenceWiseWords)
+sentenceWiseWords = preprocess(textFromPDF.getTextFromPDF("lit.pdf"))
+getSimilarArticleURLS(sentenceWiseWords)
+# print(sentenceWiseWords)
