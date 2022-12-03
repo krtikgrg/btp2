@@ -19,8 +19,9 @@ def search(query, num):
     # for link in soup.find_all('a'):
     #     url = str(link.get('href'))
     #     if url.startswith('http'):
-    #         if not url.startswith('http://go.m') and not url.startswith('https://go.m'):
-    #             urls.append(url)
+    #         if not url.startswith('http://go.m'): 
+    #             if not url.startswith('https://go.m'):
+    #                 urls.append(url)
     urls = []
     for j in gsearch(query, num=num, stop=num, pause=0.5):
         urls.append(j)
@@ -41,9 +42,5 @@ def getSimilarArticleURLS(wordsSentences):
                 counters[url] = 0
     
     urls = counters.keys()
-    for url in urls:
-        print(url)
-        print()
-    # for url in urls:
-        # extractText(url)
+    return urls
         
